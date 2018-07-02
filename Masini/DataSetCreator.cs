@@ -9,7 +9,9 @@ namespace Masini
 {
     class DataSetCreator
     {
-
+        //DataTable Vehicles = new DataTable("Vehicles");
+        //DataTable Repairs = new DataTable("Repairs");
+        
         public DataSet CreateSchema()
         {
 
@@ -51,9 +53,8 @@ namespace Masini
             DataSet q = d.CreateSchema();
             DataTable tabel = q.Tables["Vehicles"];
             tabel.Rows.Add(masina);
-
-            
         }
+
         public void FillRepairsDataTable(Repair reparatie)
         {
             DataSetCreator d = new DataSetCreator();
@@ -61,46 +62,139 @@ namespace Masini
             DataTable tabel = q.Tables["Repairs"];
             tabel.Rows.Add(reparatie);
         }
+       //sadasdasewqeq sadasdas
+
+            public void aolo()
+        {
+
+        }
+
         public void PrintVehiclesDataTable()
         {
             DataSetCreator d = new DataSetCreator();
             DataSet q = d.CreateSchema();
             DataTable tabel = q.Tables["Vehicles"];
-            
-            //foreach (DataRow item in tabel.Rows)
-            //{
-            //    string VIN = item["VIN"].ToString();
-            //    string Make = item["Make"].ToString();
-            //    string Model = item["Model "].ToString();
-            //    string Year = item["Year"].ToString();
-            //    string PlateNumber = item["PlateNumber"].ToString();
-
-
-            //}
-            foreach (DataRow row in tabel.Rows)
+            foreach (DataRow dataRow in tabel.Rows)
             {
-                Console.WriteLine();
-                for (int x = 0; x < tabel.Columns.Count; x++)
+                foreach (var item in dataRow.ItemArray)
                 {
-                    Console.Write(row[x].ToString() + " ");
+                    Console.WriteLine(item);
                 }
+                Console.WriteLine();
             }
-
+            Console.WriteLine();
         }
+
         public void PrintRepairsDataTable()
         {
             DataSetCreator d = new DataSetCreator();
             DataSet q = d.CreateSchema();
             DataTable tabel = q.Tables["Repairs"];
-            foreach (DataRow row in tabel.Rows)
+            foreach (DataRow dataRow in tabel.Rows)
             {
-                Console.WriteLine();
-                for (int x = 0; x < tabel.Columns.Count; x++)
+                foreach (var item in dataRow.ItemArray)
                 {
-                    Console.Write(row[x].ToString() + " ");
+                    Console.WriteLine(item);
                 }
+                Console.WriteLine();
             }
+            Console.WriteLine();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public void FillVehiclesDataTable(Car masina)
+        //{
+        //    DataSetCreator d = new DataSetCreator();
+        //    DataSet q = d.CreateSchema();
+        //    DataTable tabel = q.Tables["Vehicles"];
+        //    tabel.Rows.Add(masina);
+
+
+        //}
+        //public void FillRepairsDataTable(Repair reparatie)
+        //{
+        //    DataSetCreator d = new DataSetCreator();
+        //    DataSet q = d.CreateSchema();
+        //    DataTable tabel = q.Tables["Repairs"];
+        //    tabel.Rows.Add(reparatie);
+        //}
+        //public void PrintVehiclesDataTable()
+        //{
+        //    DataSetCreator d = new DataSetCreator();
+        //    DataSet q = d.CreateSchema();
+        //    DataTable tabel = q.Tables["Vehicles"];
+
+        //    //foreach (DataRow item in tabel.Rows)
+        //    //{
+        //    //    string VIN = item["VIN"].ToString();
+        //    //    string Make = item["Make"].ToString();
+        //    //    string Model = item["Model "].ToString();
+        //    //    string Year = item["Year"].ToString();
+        //    //    string PlateNumber = item["PlateNumber"].ToString();
+
+
+        //    //}
+        //    foreach (DataRow row in tabel.Rows)
+        //    {
+        //        Console.WriteLine();
+        //        for (int x = 0; x < tabel.Columns.Count; x++)
+        //        {
+        //            Console.Write(row[x].ToString() + " ");
+        //        }
+        //    }
+
+        //}
+
+        //public void PrintRepairsDataTable()
+        //{
+        //    DataSetCreator d = new DataSetCreator();
+        //    DataSet q = d.CreateSchema();
+        //    DataTable tabel = q.Tables["Repairs"];
+        //    foreach (DataRow row in tabel.Rows)
+        //    {
+        //        Console.WriteLine();
+        //        for (int x = 0; x < tabel.Columns.Count; x++)
+        //        {
+        //            Console.Write(row[x].ToString() + " ");
+        //        }
+        //    }
+        //}
 
     }
 }
